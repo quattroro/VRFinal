@@ -80,6 +80,7 @@ public class ItemSlotMenu : MonoBehaviour, IInteractable
         //}
     }
 
+    //
     public void ItemGet()
     {
         switch(parentSlot.boxType)
@@ -136,7 +137,6 @@ public class ItemSlotMenu : MonoBehaviour, IInteractable
                 case SlotMenu.Get:
                     Debug.Log($"{menu} 메뉴 눌림");
                     ItemGet();
-
 
                     break;
 

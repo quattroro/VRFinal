@@ -21,7 +21,7 @@ public class BaseItem : MonoBehaviour
 
     public int stack;
 
-    public BaseSlot CurSettedSlot;
+    public BaseSlot curSettedSlot;
     public BaseSlot LastSettedSlot;
 
     public ItemInfo itemInfo;
@@ -29,11 +29,30 @@ public class BaseItem : MonoBehaviour
     [SerializeField]
     private Material mat;
 
-    public void SetSettedSlot(BaseSlot slot)
+
+    public BaseSlot CurSettedSlot
     {
-        LastSettedSlot = CurSettedSlot;
-        CurSettedSlot = slot;
+        get
+        {
+            return curSettedSlot;
+        }
+        set
+        {
+            if(curSettedSlot == null && LastSettedSlot == null)
+            {
+                LastSettedSlot = value;
+            }
+            LastSettedSlot = curSettedSlot;
+            curSettedSlot = value;
+        }
     }
+
+
+    //public void SetSettedSlot(BaseSlot slot)
+    //{
+    //    LastSettedSlot = CurSettedSlot;
+    //    CurSettedSlot = slot;
+    //}
 
 
 

@@ -57,15 +57,15 @@ public class BaseSlot : MonoBehaviour
         if(SettedItem==null)
         {
             SettedItem = item;
-            item.transform.position = this.transform.position + new Vector3(0.01f,0,0);
+            item.CurSettedSlot = this;
+            item.transform.position = this.transform.position + new Vector3(0.01f, 0, 0);
 
             return;
         }
-
         //스택증가
         if (SettedItem == item)
         {
-
+            SettedItem.StackUp(item.Stack);
             return;
         }
         

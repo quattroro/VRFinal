@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MySingleton<GameManager>
 {
     public Camera mainCam;
+    public Inventory inven;
 
     public Camera GetCamera()
     {
@@ -29,7 +30,7 @@ public class GameManager : MySingleton<GameManager>
                 iinteract = hit[i].transform.GetComponent<IInteractable>();
                 if(iinteract!=null)
                 {
-                    ClickedItem.transform.position = hit[i].transform.position + new Vector3(0.1f,0 , 0);
+                    ClickedItem.transform.position = hit[i].transform.position + new Vector3(0.01f,0 , 0);
                 }
             }
 
